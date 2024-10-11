@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AiOutlineHeart, AiFillHeart, AiOutlineSearch, AiOutlineUser } from 'react-icons/ai';
 import { FaShoppingCart } from 'react-icons/fa';
+import Carousel from './Carousel'; // Importing the Carousel component
 import './App.css'; // Assuming you have some custom styles here.
 
 function App() {
@@ -45,9 +46,14 @@ function App() {
 
   return (
     <div className="App">
+      {/* Carousel for images */}
+      <header className="App-header">
+        <Carousel />
+      </header>
+      
       {/* Header with Cart, Search, and User icons */}
       <header className="flex justify-between items-center bg-yellow-500 text-white p-6">
-    <img src="./assets/timicareslogo.png" alt="TimiCares Logo" className="h-10 mr-4" />
+        <img src="./assets/timicareslogo.png" alt="TimiCares Logo" className="h-10 mr-4" />
         <h1 className="text-4xl font-bold">TimiCares</h1>
         <div className="flex items-center space-x-4">
           {/* Search Bar */}
@@ -92,8 +98,6 @@ function ProductList({ products, toggleFavorite }) {
 
 // ProductCard Component (Individual product card with icons)
 function ProductCard({ product, toggleFavorite }) {
-  const isFavorited = product.isFavorite; // You can handle favorite state however you wish
-  
   return (
     <div className="product-card border rounded-lg shadow-lg p-4">
       <img
