@@ -47,3 +47,4 @@ To run this project locally:
 - **Shopping Cart**: Plan to add a cart where users can add products for checkout.
 - **Search Functionality**: Advanced search to filter through products more easily.
 - **User Authentication**: Enabling users to save favorites across sessions.
+# timmy-badejo-2_timicares_assignmennt2_web_scripting-2
