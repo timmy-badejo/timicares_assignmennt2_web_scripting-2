@@ -1,9 +1,7 @@
 import React from 'react';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 
-function ProductCard({ product, toggleFavorite, addToCart, favorites }) {
-  const isFavorited = favorites.includes(product);
-
+function ProductCard({ product, toggleFavorite, addToCart, isFavorited }) {
   return (
     <div className="product-card border rounded-lg shadow-lg p-4">
       <img
@@ -43,3 +41,4 @@ function ProductCard({ product, toggleFavorite, addToCart, favorites }) {
 }
 
 export default ProductCard;
+

@@ -10,7 +10,7 @@ function ProductList({ products, toggleFavorite, addToCart, favorites }) {
           product={product}
           toggleFavorite={toggleFavorite}
           addToCart={addToCart}
-          favorites={favorites}
+          isFavorited={favorites.includes(product)}
         />
       ))}
     </div>
@@ -18,3 +18,4 @@ function ProductList({ products, toggleFavorite, addToCart, favorites }) {
 }
 
 export default ProductList;
+

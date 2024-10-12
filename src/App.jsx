@@ -41,18 +41,34 @@ function App() {
       price: 19.99
     }
   ];
-  
+
+  // Function to toggle favorites
+  const toggleFavorite = (product) => {
+    if (favorites.includes(product)) {
+      setFavorites(favorites.filter((item) => item.id !== product.id));
+    } else {
+      setFavorites([...favorites, product]);
+    }
+  };
+
+  // Function to add products to cart
+  const addToCart = (product) => {
+    setCart([...cart, product]);
+  };
 
   return (
     <div className="App">
+      {/* Carousel */}
       <header className="App-header">
         <Carousel />
       </header>
 
+      {/* Main Header with Logo, Search, Cart, and User icons */}
       <header className="flex justify-between items-center bg-yellow-500 text-white p-6">
         <img src="/assets/timicareslogo.png" alt="TimiCares Logo" className="h-10 mr-4" />
         <h1 className="text-4xl font-bold">TimiCares</h1>
         <div className="flex items-center space-x-4">
+          {/* Search Bar */}
           <div className="relative">
             <input
               type="text"
@@ -61,13 +77,20 @@ function App() {
             />
             <AiOutlineSearch className="absolute right-2 top-2 text-gray-600" />
           </div>
+          {/* Cart and User Icons */}
           <FaShoppingCart className="text-2xl cursor-pointer" />
           <AiOutlineUser className="text-2xl cursor-pointer" />
         </div>
       </header>
 
+      {/* Product List, Favorites, and Cart */}
       <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-        <ProductList products={productsData} toggleFavorite={toggleFavorite} addToCart={addToCart} />
+        <ProductList
+          products={productsData}
+          toggleFavorite={toggleFavorite}
+          addToCart={addToCart}
+          favorites={favorites}
+        />
         <FavoriteList favorites={favorites} />
         <Cart cart={cart} />
       </div>
