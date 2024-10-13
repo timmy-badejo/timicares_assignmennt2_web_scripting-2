@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { AiOutlineHeart, AiFillHeart, AiOutlineSearch, AiOutlineUser } from 'react-icons/ai';
+import { AiOutlineHeart, AiOutlineSearch, AiOutlineUser } from 'react-icons/ai';
 import { FaShoppingCart } from 'react-icons/fa';
 import Carousel from './components/Carousel';
 import ProductList from './components/ProductList';
 import FavoriteList from './components/FavoriteList';
 import Cart from './components/Cart';
-import './index.css';
+import './app.css';  // My App CSS styles
+import './index.css'; // Tailwind CSS styles
 
 function App() {
   const [favorites, setFavorites] = useState([]);
@@ -62,19 +63,19 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="app-container">
       {/* Carousel */}
-      <header className="App-header">
+      <header className="app-header">
         <Carousel />
       </header>
 
       {/* Main Header with Logo, Search, Cart, and User icons */}
-      <header className="flex justify-between items-center bg-yellow-500 text-white p-6">
-        <img src="/assets/timicareslogo.png" alt="TimiCares Logo" className="h-10 mr-4" />
+      <header className="flex justify-between items-center bg-yellow-500 text-white p-6 app-main-header">
+        <img src="/assets/timicareslogo.png" alt="TimiCares Logo" className="logo" />
         <h1 className="text-4xl font-bold">TimiCares</h1>
         <div className="flex items-center space-x-4">
           {/* Search Bar */}
-          <div className="relative">
+          <div className="relative search-bar">
             <input
               type="text"
               className="rounded-lg px-4 py-2 bg-white text-black"
@@ -89,7 +90,7 @@ function App() {
       </header>
 
       {/* Product List, Favorites, and Cart */}
-      <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="app-content p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
         <ProductList
           products={productsData}
           toggleFavorite={toggleFavorite}
@@ -104,4 +105,5 @@ function App() {
 }
 
 export default App;
+
 

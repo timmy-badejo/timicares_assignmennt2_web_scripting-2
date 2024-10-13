@@ -1,12 +1,5 @@
-/* Basic reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Center the app with some padding */
-#root {
+/* Global container styles */
+.app-container {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -15,73 +8,63 @@
 
 /* Logo styling */
 .logo {
-  height: 6em;
-  padding: 1.5em;
+  height: 3rem;
   transition: filter 300ms ease, transform 300ms ease;
 }
 
-/* Hover effects for logo */
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
-  transform: scale(1.1); /* Slightly enlarges the logo */
+  transform: scale(1.1);
 }
 
-/* React-specific hover for logo (react class on logo) */
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Header styles */
+.app-main-header {
+  background-color: #f6b879;
+  padding: 20px;
+  border-radius: 8px;
 }
 
-/* Spin animation for the logo */
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-bar input {
+  padding: 0.75rem;
+  border-radius: 8px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Carousel image styling */
+.carousel img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  max-height: 700px;
+  object-fit: cover;
 }
 
-/* Card container styling for products */
-.card {
+/* Product list and card hover effects */
+.product-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.product-card {
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
   padding: 1.5rem;
   transition: transform 200ms ease, box-shadow 200ms ease;
 }
 
-.card img {
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
   width: 100%;
   height: auto;
-  border-radius: 12px;
+  border-radius: 8px;
 }
 
-/* Hover effect for the card */
-.card:hover {
-  transform: translateY(-10px); /* Lift the card on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Deepen shadow */
-}
-
-/* Card text */
-.card h3 {
-  margin-top: 1rem;
-  font-size: 1.25rem;
-  color: #333;
-}
-
-.card p {
-  color: #666;
-  font-size: 1rem;
-}
-
-/* Button styling */
+/* Button styles */
 .button {
   background-color: #1054BD;
   color: white;
@@ -94,22 +77,5 @@
 
 .button:hover {
   background-color: #0c2a76;
-  transform: scale(1.05); /* Slight zoom effect on hover */
+  transform: scale(1.05);
 }
-
-/* Adding motion effects */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in-up {
-  animation: fadeInUp 500ms ease-in-out;
-}
-
