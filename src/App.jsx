@@ -56,6 +56,11 @@ function App() {
     setCart([...cart, product]);
   };
 
+  // Function to remove products from cart
+  const removeFromCart = (product) => {
+    setCart(cart.filter(item => item.id !== product.id));
+  };
+
   return (
     <div className="App">
       {/* Carousel */}
@@ -92,10 +97,11 @@ function App() {
           favorites={favorites}
         />
         <FavoriteList favorites={favorites} />
-        <Cart cart={cart} />
+        <Cart cart={cart} removeFromCart={removeFromCart} /> {/* Pass removeFromCart to Cart */}
       </div>
     </div>
   );
 }
 
 export default App;
+

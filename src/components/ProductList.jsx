@@ -1,12 +1,11 @@
 import React from 'react';
-
 import ProductCard from './ProductCard';
 
-function ProductList({ products, toggleFavorite, addToCart, favorites }) {
+const ProductList = ({ products, toggleFavorite, addToCart, favorites }) => {
   return (
     <div className="product-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {products.map((product) => (
-        <ProductCard
+        <MemoizedProductCard
           key={product.id}
           product={product}
           toggleFavorite={toggleFavorite}
@@ -16,7 +15,10 @@ function ProductList({ products, toggleFavorite, addToCart, favorites }) {
       ))}
     </div>
   );
-}
+};
+
+// Memoized ProductCard to prevent unnecessary re-renders
+const MemoizedProductCard = React.memo(ProductCard);
 
 export default ProductList;
 

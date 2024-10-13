@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 
 function ProductCard({ product, toggleFavorite, addToCart, isFavorited }) {
@@ -17,7 +16,7 @@ function ProductCard({ product, toggleFavorite, addToCart, isFavorited }) {
       {/* Favorite button */}
       <button
         onClick={() => toggleFavorite(product)}
-        className="flex items-center bg-yellow-500 text-white px-4 py-2 mt-4 rounded hover:bg-yellow-600"
+        className={`flex items-center px-4 py-2 mt-4 rounded ${isFavorited ? 'bg-red-500 hover:bg-red-600' : 'bg-yellow-500 hover:bg-yellow-600'} text-white`}
       >
         {isFavorited ? (
           <>
@@ -42,4 +41,5 @@ function ProductCard({ product, toggleFavorite, addToCart, isFavorited }) {
 }
 
 export default ProductCard;
+
 
