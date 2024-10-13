@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ProductCard from './ProductCard';
 
 function ProductList({ products, toggleFavorite, addToCart, favorites }) {

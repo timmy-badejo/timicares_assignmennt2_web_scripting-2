@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 
 function ProductCard({ product, toggleFavorite, addToCart, isFavorited }) {

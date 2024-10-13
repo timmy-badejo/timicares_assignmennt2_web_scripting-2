@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 function Cart({ cart }) {
   // Calculate the total number of items in the cart
   const totalItems = cart.length;
