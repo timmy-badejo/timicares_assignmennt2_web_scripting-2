@@ -1,6 +1,8 @@
 import React from 'react';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 
+
+
 function ProductCard({ product, toggleFavorite, addToCart, isFavorited }) {
   return (
     <div className="product-card border rounded-lg shadow-lg p-4">

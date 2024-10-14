@@ -1,9 +1,13 @@
 /* Global container styles */
 .app-container {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 /* Logo styling */
@@ -34,15 +38,15 @@
   width: 100%;
   height: auto;
   border-radius: 10px;
-  max-height: 700px;
+  max-height: 600px;
   object-fit: cover;
 }
 
 /* Product list and card hover effects */
 .product-list {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  gap: 16px;
 }
 
 .product-card {
@@ -51,6 +55,9 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   transition: transform 200ms ease, box-shadow 200ms ease;
+  width: 100%;
+  max-width: 300px; /* Ensure consistent width */
+  margin: 0 auto; /* Center cards horizontally */
 }
 
 .product-card:hover {
@@ -60,7 +67,8 @@
 
 .product-card img {
   width: 100%;
-  height: auto;
+  height: 200px;
+  object-fit: cover;
   border-radius: 8px;
 }
 
@@ -78,4 +86,15 @@
 .button:hover {
   background-color: #0c2a76;
   transform: scale(1.05);
+}
+
+.favorite-list, .cart {
+  max-width: 100%; /* Ensure they don't take up too much space */
+}
+
+@media (max-width: 768px) {
+  .product-list {
+    flex-direction: column;
+    align-items: center;
+  }
 }
