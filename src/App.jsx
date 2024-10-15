@@ -64,41 +64,47 @@ function App() {
 
   return (
     <div className="app-container">
-      {/* Carousel */}
-      <header className="app-header">
-        <Carousel />
-      </header>
-
       {/* Main Header with Logo, Search, Cart, and User icons */}
-      <header className="flex justify-between items-center bg-yellow-500 text-white p-6 app-main-header">
-        <img src="/assets/timicareslogo.png" alt="TimiCares Logo" className="logo" />
-        <h1 className="text-4xl font-bold">TimiCares</h1>
-        <div className="flex items-center space-x-4">
-          {/* Search Bar */}
-          <div className="relative search-bar">
-            <input
-              type="text"
-              className="rounded-lg px-4 py-2 bg-white text-black"
-              placeholder="Search products..."
-            />
-            <AiOutlineSearch className="absolute right-2 top-2 text-gray-600" />
+      <header className="app-main-header fixed top-0 left-0 right-0 bg-yellow-500 text-white p-4 z-10 shadow-md">
+        <div className="container mx-auto flex justify-between items-center">
+          <img src="/assets/timicareslogo.png" alt="TimiCares Logo" className="logo" />
+          <h1 className="text-2xl md:text-4xl font-bold">TimiCares</h1>
+          <div className="flex items-center space-x-4">
+            {/* Search Bar */}
+            <div className="relative search-bar">
+              <input
+                type="text"
+                className="rounded-lg px-4 py-2 bg-white text-black"
+                placeholder="Search products..."
+              />
+              <AiOutlineSearch className="absolute right-2 top-2 text-gray-600" />
+            </div>
+            {/* Cart and User Icons */}
+            <FaShoppingCart className="text-2xl cursor-pointer" />
+            <AiOutlineUser className="text-2xl cursor-pointer" />
           </div>
-          {/* Cart and User Icons */}
-          <FaShoppingCart className="text-2xl cursor-pointer" />
-          <AiOutlineUser className="text-2xl cursor-pointer" />
         </div>
       </header>
 
+      {/* Carousel */}
+      <div className="carousel-container mt-16"> {/* Margin added to account for fixed header */}
+        <Carousel />
+      </div>
+
       {/* Product List, Favorites, and Cart */}
-      <div className="app-content p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-        <ProductList
-          products={productsData}
-          toggleFavorite={toggleFavorite}
-          addToCart={addToCart}
-          favorites={favorites}
-        />
-        <FavoriteList favorites={favorites} />
-        <Cart cart={cart} removeFromCart={removeFromCart} /> {/* Pass removeFromCart to Cart */}
+      <div className="app-content p-6 grid grid-cols-1 lg:grid-cols-3 gap-6 container mx-auto">
+        <div className="lg:col-span-2">
+          <ProductList
+            products={productsData}
+            toggleFavorite={toggleFavorite}
+            addToCart={addToCart}
+            favorites={favorites}
+          />
+        </div>
+        <div className="space-y-6">
+          <FavoriteList favorites={favorites} toggleFavorite={toggleFavorite} />
+          <Cart cart={cart} removeFromCart={removeFromCart} />
+        </div>
       </div>
     </div>
   );

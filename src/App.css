@@ -1,9 +1,13 @@
 /* Global container styles */
 .app-container {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 /* Logo styling */
@@ -41,8 +45,8 @@
 /* Product list and card hover effects */
 .product-list {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  gap: 16px;
 }
 
 .product-card {
@@ -51,6 +55,9 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   transition: transform 200ms ease, box-shadow 200ms ease;
+  width: 100%;
+  max-width: 300px; /* Ensure consistent width */
+  margin: 0 auto; /* Center cards horizontally */
 }
 
 .product-card:hover {
@@ -60,14 +67,14 @@
 
 .product-card img {
   width: 100%;
-  height: auto;
+  height: 200px;
+  object-fit: cover;
   border-radius: 8px;
 }
 
 /* Button styles */
-/* Yellow Button (one style) */
-.button-yellow {
-  background-color: #FFD700;
+.button {
+  background-color: #1054BD;
   color: white;
   padding: 0.75rem 1.5rem;
   border: none;
@@ -76,24 +83,19 @@
   transition: background-color 200ms ease, transform 200ms ease;
 }
 
-.button-yellow:hover {
-  background-color: #f4c200;
+.button:hover {
+  background-color: #0c2a76;
   transform: scale(1.05);
 }
 
-/* Red Button (other style) */
-.button-red {
-  background-color: #8B0000;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 200ms ease, transform 200ms ease;
+.favorite-list, .cart {
+  max-width: 100%; /* Ensure they don't take up too much space */
 }
 
-.button-red:hover {
-  background-color: #7a0000;
-  transform: scale(1.05);
+@media (max-width: 768px) {
+  .product-list {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
