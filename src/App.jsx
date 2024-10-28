@@ -40,7 +40,65 @@ function App() {
       description: "Scalp oil for hair growth.",
       image: "https://images.deepai.org/art-image/5f5173aa3cd74ed29526f32f2a173e60/scalp-oil-for-african-american-people-make-it_Bw4jMdR.jpg",
       price: 19.99
+    },
+    {
+      id: 5,
+      name: "Brann Leave In Conditioner",
+      description: "Leave In Conditioner.",
+      image: "https://images.deepai.org/art-image/179890e5ef7e4a4cb78febd9d6ee41d7/afro-american-hair-product-d3cbae.jpg",
+      price: 19.99
+    },
+    {
+      id: 6,
+      name: "Essentianls Scalp Oil",
+      description: "Essetianls oil hair growth.",
+      image: "https://images.deepai.org/art-image/90ef5453eaa7460192ae43c1cbf42d59/afro-american-hair-product-and-model.jpg",
+      price: 19.99
+    },
+    {
+      id: 7,
+      name: "Brann Hair Growht Oil",
+      description: "Deep and Nourishing",
+      image: "https://images.deepai.org/art-image/d8d3e3a8d5be401f98abc5ebd7b2d5b0/afro-american-hair-product-and-model-hairstyle.jpg",
+      price: 19.99
+    },
+    {
+      id: 8,
+      name: "Mielle Organics Shampoo and Oil",
+      description: "Shampoo and oil for hair growth.",
+      image: "https://images.deepai.org/art-image/1abdf15cf33642af862acb3f503d38ec/afro-american-hair-product-3f2679.jpg",
+      price: 19.99
+    },
+    {
+      id: 9,
+      name: "Beard product",
+      description: "Beard hair oils.",
+      image: "https://images.deepai.org/art-image/ed081aaa7414466494faa5f811c6be25/afro-american-male-model-hair-product.jpg",
+      price: 19.99
+    },
+    {
+      id: 10,
+      name: "Afro-america styling hair with hair care product",
+      description: "Scalp oil for hair growth.",
+      image: "https://images.deepai.org/art-image/2d447e0a72ec4539b4dcf214bf359a37/afro-america-styling-hair-with-hair-care-product.jpg",
+      price: 19.99
+    },
+    {
+      id: 11,
+      name: "Hair Style Gel",
+      description: "Brann hair style.",
+      image: "https://images.deepai.org/art-image/c57d45a6cd494af98661db9f036184bd/afro-american-hair-product-and-hair-care-with_lycAMj7.jpg",
+      price: 19.99
+    },
+    {
+      id: 12,
+      name: "Beautiful Hair Glow",
+      description: "Scalp oil for hair growth.",
+      image: "https://images.deepai.org/art-image/1aec867984dc4ecfa9b48f5e71a496ba/afro-american-hair-product-and-hair-care-with_qc0Ij2z.jpg",
+      price: 19.99
     }
+
+    
   ];
 
   // Function to toggle favorites
