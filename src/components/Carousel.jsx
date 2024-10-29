@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import './Carousel.css';
+import React, { useState, useEffect } from "react";
+import "./Carousel.css";
 
 function Carousel() {
     const carouselImages = [
@@ -26,16 +26,13 @@ function Carousel() {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % carouselImages.length);
     }, 4000);
-
     return () => clearInterval(interval);
   }, [carouselImages.length]);
 
   return (
     <div className="carousel-container">
       <div className="carousel-frame">
-        <div className="carousel">
-          <img src={carouselImages[currentIndex]} alt="Product" className="carousel-image" />
-        </div>
+        <img src={carouselImages[currentIndex]} alt="Product" className="carousel-image" />
       </div>
     </div>
   );

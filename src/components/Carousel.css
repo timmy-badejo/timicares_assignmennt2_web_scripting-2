@@ -13,6 +13,8 @@
   padding: 4px;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 80%;
+  margin: 0 auto;
 }
 
 .carousel {
@@ -24,14 +26,12 @@
 
 .carousel-image {
   width: 100%;
-  height: 400px; /* Adjusted height */
+  max-width: 600px;
+  height: 700px;
   object-fit: cover;
-  transition: transform 1s ease-in-out;
-}
-
-.carousel-image {
   animation: fade-in 2s ease-in-out;
 }
+
 
 @keyframes fade-in {
   from {

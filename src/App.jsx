@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
-import { AiOutlineHeart, AiOutlineSearch, AiOutlineUser } from 'react-icons/ai';
-import { FaShoppingCart, FaRegGem, FaBrush, FaBroom, FaCogs, FaBolt, FaFan, FaFire, FaWater, FaLeaf, FaSpa, FaTint, FaScissors } from 'react-icons/fa';
-import Carousel from './components/Carousel';
-import ProductList from './components/ProductList';
-import FavoriteList from './components/FavoriteList';
-import Cart from './components/Cart';
-import './App.css';  // Custom styles
-import './index.css'; // Tailwind CSS
+import React, { useState } from "react";
+import { AiOutlineHeart, AiOutlineSearch, AiOutlineUser } from "react-icons/ai";
+import { FaShoppingCart, FaRegGem, FaBrush, FaBroom, FaCogs, FaBolt, FaFan, FaFire, FaWater, FaLeaf, FaSpa, FaTint, FaCut } from "react-icons/fa";
+import Carousel from "./components/Carousel";
+import ProductList from "./components/ProductList";
+import FavoriteList from "./components/FavoriteList";
+import Cart from "./components/Cart";
+import "./App.css";
+import "/src/index.css";
 
 function App() {
   const [favorites, setFavorites] = useState([]);
   const [cart, setCart] = useState([]);
-  
+
+  // Full productsData array with each product detailed.
   const productsData = [
     {
       id: 1,
@@ -50,7 +51,7 @@ function App() {
     },
     {
       id: 6,
-      name: "Essentianls Scalp Oil",
+      name: "Essentials Scalp Oil",
       description: "Essentials oil for hair growth.",
       image: "https://images.deepai.org/art-image/90ef5453eaa7460192ae43c1cbf42d59/afro-american-hair-product-and-model.jpg",
       price: 19.99
@@ -99,7 +100,6 @@ function App() {
     }
   ];
 
-  // Function to toggle favorites
   const toggleFavorite = (product) => {
     if (favorites.includes(product)) {
       setFavorites(favorites.filter((item) => item.id !== product.id));
@@ -108,21 +108,13 @@ function App() {
     }
   };
 
-  // Function to add products to cart
-  const addToCart = (product) => {
-    setCart([...cart, product]);
-  };
+  const addToCart = (product) => setCart([...cart, product]);
+  const removeFromCart = (product) => setCart(cart.filter(item => item.id !== product.id));
 
-  // Function to remove products from cart
-  const removeFromCart = (product) => {
-    setCart(cart.filter(item => item.id !== product.id));
-  };
-
-   // Product Icons data
-   const icons = [
+  const icons = [
     { icon: <FaRegGem />, name: "Shine Serum" },
     { icon: <FaBrush />, name: "Hair Brush" },
-    { icon: <FaScissors />, name: "Scissors" },
+    { icon: <FaCut />, name: "Scissors" },
     { icon: <FaBroom />, name: "Dry Shampoo" },
     { icon: <FaCogs />, name: "Styling Gel" },
     { icon: <FaBolt />, name: "Hair Spray" },
@@ -136,30 +128,27 @@ function App() {
 
   return (
     <div className="app-container">
-      <header className="app-main-header fixed top-0 left-0 right-0 bg-yellow-500 text-white p-4 z-10 shadow-md">
-        <div className="container mx-auto flex justify-between items-center">
-          <img src="/assets/timicareslogo.png" alt="TimiCares Logo" className="logo" />
-          <h1 className="text-2xl md:text-4xl font-bold">TimiCares</h1>
-          <div className="flex items-center space-x-4">
-            <div className="relative search-bar">
-              <input
-                type="text"
-                className="rounded-lg px-4 py-2 bg-white text-black"
-                placeholder="Search products..."
-              />
-              <AiOutlineSearch className="absolute right-2 top-2 text-gray-600" />
+      <header className="app-main-header">
+        <div>
+          <img src="src/assets/timicareslogo.png" alt="TimiCares Logo" className="logo" />
+          <h1 class ="header">TimiCares</h1>
+          <div>
+            <div className="search-bar">
+              <input type="text"placeholder="Search products..." />
+              <AiOutlineSearch/>
             </div>
-            <FaShoppingCart className="text-2xl cursor-pointer" />
-            <AiOutlineUser className="text-2xl cursor-pointer" />
           </div>
+          <div className="header-icon">
+            <FaShoppingCart/>
+            <AiOutlineUser/>
+          </div>  
         </div>
       </header>
 
-      <div className="carousel-container mt-16">
+      <div className="carousel-container">
         <Carousel />
       </div>
 
-      {/* Product Icons */}
       <div className="icons-container">
         {icons.map((item, index) => (
           <div className="icon-box" key={index}>
@@ -169,16 +158,11 @@ function App() {
         ))}
       </div>
 
-      <div className="app-content p-6 grid grid-cols-1 lg:grid-cols-3 gap-6 container mx-auto">
-        <div className="lg:col-span-2">
-          <ProductList
-            products={productsData}
-            toggleFavorite={toggleFavorite}
-            addToCart={addToCart}
-            favorites={favorites}
-          />
+      <div>
+        <div>
+          <ProductList products={productsData} toggleFavorite={toggleFavorite} addToCart={addToCart} favorites={favorites} />
         </div>
-        <div className="space-y-6">
+        <div>
           <FavoriteList favorites={favorites} toggleFavorite={toggleFavorite} />
           <Cart cart={cart} removeFromCart={removeFromCart} />
         </div>
@@ -188,4 +172,5 @@ function App() {
 }
 
 export default App;
+
 
