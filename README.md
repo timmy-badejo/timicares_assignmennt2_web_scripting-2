@@ -16,7 +16,7 @@ To run this project locally:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/timmy-badejo/timmy-badejo-2_timicares_assignmennt2_web_scripting-2.git
+   git clone https://github.com/timmy-badejo/timicares_assignmennt2_web_scripting-2
    ```
 
 2. **Navigate to the project folder**:
