@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { AiOutlineHeart, AiOutlineSearch, AiOutlineUser } from 'react-icons/ai';
-import { FaShoppingCart } from 'react-icons/fa';
+import { FaShoppingCart, FaRegGem, FaBrush, FaBroom, FaCogs, FaBolt, FaFan, FaFire, FaWater, FaLeaf, FaSpa, FaTint, FaScissors } from 'react-icons/fa';
 import Carousel from './components/Carousel';
 import ProductList from './components/ProductList';
 import FavoriteList from './components/FavoriteList';
 import Cart from './components/Cart';
-import './App.css';  
-import './index.css'; // Tailwind CSS styles
+import './App.css';  // Custom styles
+import './index.css'; // Tailwind CSS
 
 function App() {
   const [favorites, setFavorites] = useState([]);
   const [cart, setCart] = useState([]);
-
+  
   const productsData = [
     {
       id: 1,
@@ -51,13 +51,13 @@ function App() {
     {
       id: 6,
       name: "Essentianls Scalp Oil",
-      description: "Essetianls oil hair growth.",
+      description: "Essentials oil for hair growth.",
       image: "https://images.deepai.org/art-image/90ef5453eaa7460192ae43c1cbf42d59/afro-american-hair-product-and-model.jpg",
       price: 19.99
     },
     {
       id: 7,
-      name: "Brann Hair Growht Oil",
+      name: "Brann Hair Growth Oil",
       description: "Deep and Nourishing",
       image: "https://images.deepai.org/art-image/d8d3e3a8d5be401f98abc5ebd7b2d5b0/afro-american-hair-product-and-model-hairstyle.jpg",
       price: 19.99
@@ -71,14 +71,14 @@ function App() {
     },
     {
       id: 9,
-      name: "Beard product",
+      name: "Beard Product",
       description: "Beard hair oils.",
       image: "https://images.deepai.org/art-image/ed081aaa7414466494faa5f811c6be25/afro-american-male-model-hair-product.jpg",
       price: 19.99
     },
     {
       id: 10,
-      name: "Afro-america styling hair with hair care product",
+      name: "Styling Hair with Hair Care Product",
       description: "Scalp oil for hair growth.",
       image: "https://images.deepai.org/art-image/2d447e0a72ec4539b4dcf214bf359a37/afro-america-styling-hair-with-hair-care-product.jpg",
       price: 19.99
@@ -97,8 +97,6 @@ function App() {
       image: "https://images.deepai.org/art-image/1aec867984dc4ecfa9b48f5e71a496ba/afro-american-hair-product-and-hair-care-with_qc0Ij2z.jpg",
       price: 19.99
     }
-
-    
   ];
 
   // Function to toggle favorites
@@ -120,15 +118,29 @@ function App() {
     setCart(cart.filter(item => item.id !== product.id));
   };
 
+   // Product Icons data
+   const icons = [
+    { icon: <FaRegGem />, name: "Shine Serum" },
+    { icon: <FaBrush />, name: "Hair Brush" },
+    { icon: <FaScissors />, name: "Scissors" },
+    { icon: <FaBroom />, name: "Dry Shampoo" },
+    { icon: <FaCogs />, name: "Styling Gel" },
+    { icon: <FaBolt />, name: "Hair Spray" },
+    { icon: <FaFan />, name: "Blow Dryer" },
+    { icon: <FaFire />, name: "Heat Protectant" },
+    { icon: <FaWater />, name: "Moisture Spray" },
+    { icon: <FaLeaf />, name: "Herbal Oil" },
+    { icon: <FaSpa />, name: "Conditioner" },
+    { icon: <FaTint />, name: "Hair Dye" }
+  ];
+
   return (
     <div className="app-container">
-      {/* Main Header with Logo, Search, Cart, and User icons */}
       <header className="app-main-header fixed top-0 left-0 right-0 bg-yellow-500 text-white p-4 z-10 shadow-md">
         <div className="container mx-auto flex justify-between items-center">
           <img src="/assets/timicareslogo.png" alt="TimiCares Logo" className="logo" />
           <h1 className="text-2xl md:text-4xl font-bold">TimiCares</h1>
           <div className="flex items-center space-x-4">
-            {/* Search Bar */}
             <div className="relative search-bar">
               <input
                 type="text"
@@ -137,19 +149,26 @@ function App() {
               />
               <AiOutlineSearch className="absolute right-2 top-2 text-gray-600" />
             </div>
-            {/* Cart and User Icons */}
             <FaShoppingCart className="text-2xl cursor-pointer" />
             <AiOutlineUser className="text-2xl cursor-pointer" />
           </div>
         </div>
       </header>
 
-      {/* Carousel */}
-      <div className="carousel-container mt-16"> {/* Margin added to account for fixed header */}
+      <div className="carousel-container mt-16">
         <Carousel />
       </div>
 
-      {/* Product List, Favorites, and Cart */}
+      {/* Product Icons */}
+      <div className="icons-container">
+        {icons.map((item, index) => (
+          <div className="icon-box" key={index}>
+            <div className="icon">{item.icon}</div>
+            <p className="icon-name">{item.name}</p>
+          </div>
+        ))}
+      </div>
+
       <div className="app-content p-6 grid grid-cols-1 lg:grid-cols-3 gap-6 container mx-auto">
         <div className="lg:col-span-2">
           <ProductList
@@ -169,14 +188,4 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
 

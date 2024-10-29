@@ -34,7 +34,7 @@ To run this project locally:
    npm run dev
    ```
 
-5. **View the app** at `http://localhost:5173/`.
+5. **View the app** at `http://localhost:5177/`.
 
 ## Challenges
 
